@@ -6,8 +6,11 @@ class App < Sinatra::Base
   end
 
   post '/reverse' do
-    erb :reversed
-    puts params
+    original_string = params["string"]
+    @reversed_string = original_string.reverse
+
+    
+      erb :reversed
   end
 
   get '/friends' do
